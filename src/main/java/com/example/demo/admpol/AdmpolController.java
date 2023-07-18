@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
@@ -13,7 +14,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
-public class DemoController {
+@RequestMapping("/polygon")
+public class AdmpolController {
 
     private final AdmService admService;
     private final AdmPolMapper admPolMapper = AdmPolMapper.INSTANCE;

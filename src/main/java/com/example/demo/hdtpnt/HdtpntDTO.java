@@ -1,7 +1,6 @@
-package com.example.demo.admpol;
+package com.example.demo.hdtpnt;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.wololo.geojson.Geometry;
@@ -9,13 +8,13 @@ import org.wololo.geojson.Geometry;
 @Getter
 @Setter
 @AllArgsConstructor
-public class AdmPolDTO {
+public class HdtpntDTO {
     private long id;
+    private Geometry geometry;
     private long id2;
     private String uuid;
     private String code;
     private String objectName;
-    private String obl;
-    private String adm;
-    private Geometry polygon;
+    private String caption;
+    private int cont;
 }
