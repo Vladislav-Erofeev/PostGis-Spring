@@ -1,7 +1,5 @@
 package com.example.demo.rdcpnt;
 
-import com.example.demo.admpol.AdmPol;
-import com.example.demo.admpol.AdmPolDTO;
 import com.example.demo.admpol.AdmService;
 import lombok.RequiredArgsConstructor;
 import org.locationtech.jts.geom.Polygon;

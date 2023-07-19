@@ -1,7 +1,6 @@
 package com.example.demo.admpol;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.wololo.geojson.Geometry;

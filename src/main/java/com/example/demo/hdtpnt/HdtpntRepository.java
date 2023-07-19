@@ -1,6 +1,5 @@
 package com.example.demo.hdtpnt;
 
-import com.example.demo.admpol.AdmPol;
 import org.locationtech.jts.geom.Polygon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
