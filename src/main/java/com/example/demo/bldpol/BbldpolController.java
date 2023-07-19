@@ -30,6 +30,16 @@ public class BbldpolController {
         return result.stream().map(this::convertToBldpolDTO).collect(Collectors.toList());
     }
 
+    @GetMapping("/crosses")
+    public List<BldpolDTO> getAllCrossesArea() {
+        AdmPol admPol = admService.getAll().get(1);
+        Polygon polygon = admPol.getPolygon();
+        List<Bldpol> result = bldpolService.getAllCrossesArea(polygon);
+        System.out.println(admPol.getId() + "  :   " + admPol.getAdm());
+        System.out.println(result.size());
+        return result.stream().map(this::convertToBldpolDTO).collect(Collectors.toList());
+    }
+
     private BldpolDTO convertToBldpolDTO(Bldpol bldpol) {
         BldpolDTO bldpolDTO = bldpolMapper.convertToBldpolDTO(bldpol);
         bldpolDTO.setGeometry(new GeoJSONWriter().write(bldpol.getPolygon()));

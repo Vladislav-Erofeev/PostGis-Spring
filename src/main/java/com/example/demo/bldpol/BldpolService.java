@@ -12,6 +12,10 @@ public class BldpolService {
     private final BldpolRepository bldpolRepository;
 
     public List<Bldpol> getAllInArea(Polygon polygon) {
-        return bldpolRepository.getAllInArea(polygon);
+        return bldpolRepository.findAllInArea(polygon);
+    }
+
+    public List<Bldpol> getAllCrossesArea(Polygon polygon) {
+        return bldpolRepository.findAllCrossesArea(polygon);
     }
 }
