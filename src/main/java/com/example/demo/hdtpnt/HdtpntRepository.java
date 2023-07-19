@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface HdtpntRepository extends JpaRepository<Hdtpnt, Long> {
-    @Query(value = "select * from hdtpnt h where public.st_within(h.sp_geometry, :polygon) = true", nativeQuery = true)
+    @Query(value = "select * from hdtpnt h where public.st_contains(h.sp_geometry, :polygon) = false", nativeQuery = true)
     List<Hdtpnt> getAllPoints(@Param("polygon") Polygon polygon);
 }
