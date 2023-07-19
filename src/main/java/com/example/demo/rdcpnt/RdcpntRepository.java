@@ -11,7 +11,8 @@ import java.util.List;
 @Repository
 public interface RdcpntRepository extends JpaRepository<Rdcpnt, Long> {
 
-    @Query(value = "select * from rdcpnt r where public.st_intersects(:polygon, r.sp_geometry) = true", nativeQuery = true)
+    // Поиск точек в выбранной области
+    @Query(value = "select * from rdcpnt r where public.st_within(r.sp_geometry, :polygon) = true", nativeQuery = true)
     List<Rdcpnt> findAllInArea(@Param("polygon")Polygon polygon);
 }
 
